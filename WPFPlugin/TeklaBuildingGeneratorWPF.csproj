@@ -105,11 +105,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\BeamExtension.cs" />
+    <Compile Include="Extensions\PointExtension.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="ModelPlugin.cs" />
+    <Compile Include="Extensions\PartExtension.cs" />
+    <Compile Include="Profiles\ProfileSizes.cs" />
+    <Compile Include="Profiles\ProfileTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

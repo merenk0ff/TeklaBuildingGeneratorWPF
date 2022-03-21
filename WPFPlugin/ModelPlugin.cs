@@ -8,6 +8,7 @@ using Tekla.Structures.Model;
 using Tekla.Structures.Model.Operations;
 using Tekla.Structures.Model.UI;
 using Tekla.Structures.Plugins;
+using WPFPlugin.Extensions;
 
 namespace WPFPlugin
 {
@@ -101,26 +102,49 @@ namespace WPFPlugin
             {
                 GetValuesFromDialog();
 
-                var startPoint = new Point();
-                var endPoint = new Point(1000,0,0);
+                var xSize = 6000;
+                var ySize = 9000;
+                var zSize = 10000;
 
-                var lengthVector = new Point(endPoint.X - startPoint.X, endPoint.Y - startPoint.Y, endPoint.Z - startPoint.Z);
 
-                if (_LengthFactor > 0)
-                {
-                    endPoint.X = _LengthFactor * lengthVector.X + startPoint.X;
-                    endPoint.Y = _LengthFactor * lengthVector.Y + startPoint.Y;
-                    endPoint.Z = _LengthFactor * lengthVector.Z + startPoint.Z;
-                }
 
-                var beam = new Beam(startPoint, endPoint);
-                beam.Position.PlaneOffset = _Offset;
-                beam.Name = _PartName;
-                beam.Profile.ProfileString = _Profile;
-                beam.Material.MaterialString = _Material;
-                beam.Insert();
+                var column1 = InsertBeam(
+                    new Point(0, 0, 0), 
+                    new Point(0, 0, ySize)
+                    );
+                var column2 = InsertBeam(
+                    column1.StartPoint.Move(new Vector(0,1,0), ySize), 
+                    column1.EndPoint.Move(new Vector(0, 1, 0), ySize)
+                    );
+                //var column3 = InsertBeam(
+                //    column1.StartPoint.Move(new Vector(1, 0, 0), xSize),
+                //    column1.EndPoint.Move(new Vector(1, 0, 0), xSize)
+                //);
+                //var column4 = InsertBeam(
+                //    column2.StartPoint.Move(new Vector(1, 0, 0), xSize),
+                //    column2.EndPoint.Move(new Vector(1, 0, 0), xSize)
+                //);
+                var beam1 = new Beam(column1.EndPoint, column2.EndPoint);
+                beam1.Position.PlaneOffset = _Offset;
+                beam1.Position.Rotation = Position.RotationEnum.BELOW;
+                beam1.Position.Depth = Position.DepthEnum.MIDDLE;
+                beam1.Position.Plane = Position.PlaneEnum.MIDDLE;
+                beam1.Name = _PartName;
+                beam1.Profile.ProfileString = "I20B1_20_93";
+                beam1.Material.MaterialString = _Material;
+                beam1.Insert();
 
-                Operation.DisplayPrompt("Selected component " + _Data.componentname + " : " + _Data.componentnumber.ToString());
+                var beam1Height = beam1.GetHeight();
+                beam1.Select();
+                beam1.StartPoint = beam1.StartPoint.Move(new Vector(0, 0, -1), beam1Height / 2);
+                beam1.EndPoint = beam1.EndPoint.Move(new Vector(0, 0, -1), beam1Height / 2);
+                beam1.Modify();
+
+
+
+
+
+                //Operation.DisplayPrompt("Selected component " + _Data.componentname + " : " + _Data.componentnumber.ToString());
 
             }
             catch (Exception Exc)
@@ -130,6 +154,45 @@ namespace WPFPlugin
 
             return true;
         }
+
+        private Beam InsertBeam(Point startPoint, Point endPoint)
+        {
+            var beam = new Beam(startPoint, endPoint);
+            beam.Position.PlaneOffset = _Offset;
+            beam.Position.Depth = Position.DepthEnum.MIDDLE;
+            beam.Position.Plane = Position.PlaneEnum.MIDDLE;
+            beam.Position.Rotation = Position.RotationEnum.BACK;
+            beam.Name = _PartName;
+            beam.Profile.ProfileString = _Profile;
+            beam.Material.MaterialString = _Material;
+            beam.Insert();
+            return beam;
+        }
+        private Beam InsertBeam(Point startPoint, Point endPoint, string profileName, string materialName)
+        {
+            var beam = new Beam(startPoint, endPoint);
+            beam.Position.PlaneOffset = _Offset;
+            beam.Position.Depth = Position.DepthEnum.MIDDLE;
+            beam.Position.Plane = Position.PlaneEnum.MIDDLE;
+            beam.Position.Rotation = Position.RotationEnum.BACK;
+            beam.Name = _PartName;
+            beam.Profile.ProfileString = profileName;
+            beam.Material.MaterialString = materialName;
+            beam.Insert();
+            return beam;
+        }
+        private Beam InsertBeam(Point startPoint, Point endPoint, string profileName)
+        {
+            var beam = new Beam(startPoint, endPoint);
+            beam.Position.PlaneOffset = _Offset;
+            beam.Position.Rotation = Position.RotationEnum.BACK;
+            beam.Name = _PartName;
+            beam.Profile.ProfileString = profileName;
+            beam.Material.MaterialString = _Material;
+            beam.Insert();
+            return beam;
+        }
+
         #endregion
 
         #region Private methods
@@ -145,11 +208,11 @@ namespace WPFPlugin
             _LengthFactor = Data.lengthfactor + 1;
 
             if (IsDefaultValue(_PartName))
-                _PartName = "TEST";
+                _PartName = "Part";
             if (IsDefaultValue(_Profile))
-                _Profile = "HEA200";
+                _Profile = "I20K1_20_93";
             if (IsDefaultValue(_Material))
-                _Material = "STEEL_UNDEFINED";
+                _Material = "C255";
             if (IsDefaultValue(_Offset))
                 _Offset = 0;
             if (IsDefaultValue(_LengthFactor) || _LengthFactor == 0)
