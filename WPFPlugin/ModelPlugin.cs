@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 using Tekla.Structures.Geometry3d;
@@ -140,11 +142,20 @@ namespace WPFPlugin
                 beam1.EndPoint = beam1.EndPoint.Move(new Vector(0, 0, -1), beam1Height / 2);
                 beam1.Modify();
 
+                //var sortament = new DataSet.Profiles();
+                //sortament.ReadXml("C:\\Temp\\test read.xml");
+                //var count = sortament.Identification_number_RU.Rows.Count;
+                //var count2 = sortament.Identification_number.Rows.Count;
+                //var newRow = sortament.NewIdentification_number_RURow();
+                //newRow.ID = "id id";
+                //newRow.NAME = "ÈÌÿ פאיכא";
 
 
 
 
-                //Operation.DisplayPrompt("Selected component " + _Data.componentname + " : " + _Data.componentnumber.ToString());
+
+                //sortament.AddIdentification_number_RURow(newRow);
+                //sortament.WriteXml("C:\\Temp\\test.xml");
 
             }
             catch (Exception Exc)

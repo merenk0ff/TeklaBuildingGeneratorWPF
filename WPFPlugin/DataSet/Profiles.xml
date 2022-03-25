@@ -1,0 +1,107 @@
+<?xml version="1.0" standalone="yes"?>
+<Profiles xmlns="http://tempuri.org/Profiles.xsd">
+  <Identification_x0020_number_x0020_RU>
+    <ID>"Индентификатор"</ID>
+	<NAME>"Имя группы сечения"</NAME>
+	<DIM1>"Первая числовая компонента метки сечения"</DIM1>
+	<DIM2>"Вторая числовая компонента метки сечения"</DIM2>
+	<DIM3>"Третья числовая компонента метки сечения"</DIM3>
+	<SHAPE_TYPE>"Номер типа формы сечения (типы доступны в программе Robot Millennium)"</SHAPE_TYPE>
+	<MASS>"Вес 1 п.м."</MASS>
+	<SURF>"Поверхность покраски (периметр сечения)"</SURF>
+	<H>"Высота сечения"</H>
+	<B>"Ширина сечения"</B>
+	<EA>"Толщина стенки"</EA>
+	<ES>"Толщина полки"</ES>
+	<RA>"Радиус скругления (стенка)"</RA>
+	<RS>"Радиус скругления (полка)"</RS>
+	<GAP>"Расстояние между поясами в составных сечениях"</GAP>
+	<SX>"Площадь сечения"</SX>
+	<SY>"Приведенная площадь сечения для расчета среза -  XY - когда перерезывающая сила действует по оси Y"</SY>
+	<SZ>"Приведенная площадь сечения для расчета среза -  XZ - когда перерезывающая сила действует по оси Z"</SZ>
+	<IX>"Крутящий момент инерции"</IX>
+	<IY>"Момент инерции относительно оси Y"</IY>
+	<IZ>"Момент инерции относительно оси Z"</IZ>
+	<IOMEGA>"Секториальный момент инерции (для тонко-стенных сечений)"</IOMEGA>
+	<VY>"Максимальное удаление волокна от точки локальной оси Z на положительной стороне оси Y"</VY>
+	<VPY>"Максимальное удаление волокна от точки локальной оси Z на отрицательной стороне оси Y"</VPY>
+	<VZ>"Максимальное удаление волокна от точки локальной оси Y на положительной стороне оси Z"</VZ>
+	<VPZ>"Максимальное удаление волокна от точки локальной оси Y на отрицательной стороне оси Z"</VPZ>
+	<MSY>"Пластический момент сопротивления относительно оси Y"</MSY>
+	<MSZ>"Пластический момент сопротивления относительно оси Z"</MSZ>
+	<TORS>"Момент сопротивления для расчета кручения"</TORS>
+	<SHEAR_QY>"Площадь среза (Qy)"</SHEAR_QY>
+	<SHEAR_QZ>"Площадь среза (Qz)"</SHEAR_QZ>
+	<GAMMA>"Угол поворота от локальной к главной системе координта (максимальное значение момента инерции сечения)"</GAMMA>
+	<SYMBOL>"Вектор описания формы сечения"</SYMBOL>
+	<A_1>"Дополнительный угол"</A_1>
+	<A_2>"Дополнительный угол"</A_2>
+	<HAS_MATS>"Признак, определяющий наличие материалов, назначенных сечению (ДА/НЕТ)"</HAS_MATS>
+	<MATERIALS>"Список материалов назначанных сечению"</MATERIALS>
+	<POINTS>"Список характерных точек сечения"</POINTS>
+	<IS_THIN>"Переключатель для указания на тонко-стенное сечение  (ДА/НЕТ)"</IS_THIN>
+	<B_2>"Ширина сечения - вторая полка (ассимметричное I- сечение)"</B_2>
+	<ES_2>"Толщина второй полки (ассимметричное I- сечение)"</ES_2>
+	<P1_L>"Длина пластины P1 (крестообразное сечение)"</P1_L>
+	<P1_T>"Толщина пластины P1 (крестообразное сечение)"</P1_T>
+	<P2_L>"Длина пластины P2 (крестообразное сечение)"</P2_L>
+	<P2_T>"Толщина пластины P2 (крестообразное сечение)"</P2_T>
+	<P3_L>"Длина пластины P3 (крестообразное сечение)"</P3_L>
+	<P3_T>"Толщина пластины P3 (крестообразное сечение)"</P3_T>
+	<P4_L>"Длина пластины P4 (крестообразное сечение)"</P4_L>
+	<P4_T>"Толщина пластины P4 (крестообразное сечение)"</P4_T>
+	<NAME1>"Метка сечения"</NAME1>
+  </Identification_x0020_number_x0020_RU>
+  <Identification_x0020_number>
+    <ID>"Identification number"</ID>
+	<NAME>"Name of section group"</NAME>
+	<DIM1>"First numerical component od section label"</DIM1>
+	<DIM2>"Second numerical component od section label"</DIM2>
+	<DIM3>"Third numerical component od section label"</DIM3>
+	<SHAPE_TYPE>"Number of section shape type (types available in the Robot Millennium program)"</SHAPE_TYPE>
+	<MASS>"Nominal weight per unit length"</MASS>
+	<SURF>"Painting surface (section perimeter)"</SURF>
+	<H>"Section height"</H>
+	<B>"Section width"</B>
+	<EA>"Web thickness"</EA>
+	<ES>"Flange thickness"</ES>
+	<RA>"Fillet radius (web)"</RA>
+	<RS>"Fillet radius (flange)"</RS>
+	<GAP>"Distance between chords in the complex sections"</GAP>
+	<SX>"Cross-section area"</SX>
+	<SY>"Reduced section area for XY-shear deformation calculations - when shear force influence along Y axis is taken into consideration"</SY>
+	<SZ>"Reduced section area for XZ-shear deformation calculations - when shear force influence along Z axis is taken into consideration"</SZ>
+	<IX>"Torsional moment of inertia"</IX>
+	<IY>"Moment of inertia about the Y axis"</IY>
+	<IZ>"Moment of inertia about the Z axis"</IZ>
+	<IOMEGA>"Warping constant (for thin-walled sections)"</IOMEGA>
+	<VY>"Extreme fiber distance from the Z local axis of the point on the positive side of the Y axis"</VY>
+	<VPY>"Extreme fiber distance from the Z local axis of the point on the negative side of the Y axis"</VPY>
+	<VZ>"Extreme fiber distance from the Y local axis of the point on the positive side of the Z axis"</VZ>
+	<VPZ>"Extreme fiber distance from the Y local axis of the point on the negative side of the Z axis"</VPZ>
+	<MSY>"Plastic section modulus about Y axis"</MSY>
+	<MSZ>"Plastic section modulus about Z axis"</MSZ>
+	<TORS>"Section modulus for calculations of torsion stresses"</TORS>
+	<SHEAR_QY>"Shear area (Qy)"</SHEAR_QY>
+	<SHEAR_QZ>"Shear area (Qz)"</SHEAR_QZ>
+	<GAMMA>"Rotation angle from local to principal coordinate system (maximum values of section moments of inertia)"</GAMMA>
+	<SYMBOL>"Vector description of section shape"</SYMBOL>
+	<A_1>"Additional angle"</A_1>
+	<A_2>"Additional angle"</A_2>
+	<HAS_MATS>"Indicator describing the presence of materials assigned to section (YES/NO)"</HAS_MATS>
+	<MATERIALS>"List of materials assigned to a section"</MATERIALS>
+	<POINTS>"List of section characteristic points"</POINTS>
+	<IS_THIN>"Switch for indicating a thin-walled section (YES/NO)"</IS_THIN>
+	<B_2>" AISC k design value /or/ Section width - second flange (I asymmetric section)"</B_2>
+	<ES_2>" AISC k detailing value /or/ Second flange thickness (I asymmetric section)"</ES_2>
+	<P1_L>" AISC T value /or/ Plate length P1 (cross-shaped section)"</P1_L>
+	<P1_T>"Plate thickness P1 (cross-shaped section) "</P1_T>
+	<P2_L>"Plate length P2 (cross-shaped section)"</P2_L>
+	<P2_T>"Plate thickness P2 (cross-shaped section)"</P2_T>
+	<P3_L>"Plate length P3 (cross-shaped section)"</P3_L>
+	<P3_T>"Plate thickness P3 (cross-shaped section)"</P3_T>
+	<P4_L>"Plate length P4 (cross-shaped section)"</P4_L>
+	<P4_T>"Plate thickness P4 (cross-shaped section)"</P4_T>
+	<NAME1>"Designation"</NAME1>
+  </Identification_x0020_number>
+</Profiles>

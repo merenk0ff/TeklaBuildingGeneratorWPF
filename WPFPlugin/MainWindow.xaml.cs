@@ -80,5 +80,16 @@ namespace WPFPlugin
             this.dataModel.ComponentName = this.componentCatalog.SelectedName;
             this.dataModel.ComponentNumber = this.componentCatalog.SelectedNumber;
         }
+
+        
+        
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var profiles = new DataSet.Profiles();
+            profiles.ReadXml("C:\\Temp\\profiles.xml");
+            ProfilesDataGrid.ItemsSource = profiles.Identification_number_RU.DefaultView;
+
+        }
     }
 }

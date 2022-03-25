@@ -79,6 +79,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Windows.Forms" />
@@ -107,17 +108,24 @@
   <ItemGroup>
     <Compile Include="Extensions\BeamExtension.cs" />
     <Compile Include="Extensions\PointExtension.cs" />
+    <Compile Include="Helpers\Files.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="ModelPlugin.cs" />
     <Compile Include="Extensions\PartExtension.cs" />
+    <Compile Include="DataSet\Profiles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Profiles.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Profiles\ProfileSizes.cs" />
     <Compile Include="Profiles\ProfileTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GOSTPro.xml" />
     <Content Include="Resources\element_catalog_cross_section.bmp" />
     <Content Include="Resources\element_catalog_cross_section_sketch.bmp" />
     <Content Include="Resources\element_catalog_cross_section_user.bmp" />
@@ -162,6 +170,17 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="DataSet\Profiles.xsc">
+      <DependentUpon>Profiles.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\Profiles.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Profiles.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\Profiles.xss">
+      <DependentUpon>Profiles.xsd</DependentUpon>
+    </None>
     <None Include="WPFPlugin.ail">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
