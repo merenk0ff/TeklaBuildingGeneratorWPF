@@ -106,6 +106,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildingModel\Body.cs" />
+    <Compile Include="BuildingModel\BuildingModel.cs" />
     <Compile Include="DataSet\Profiles.cs">
       <DependentUpon>Profiles.xsd</DependentUpon>
     </Compile>

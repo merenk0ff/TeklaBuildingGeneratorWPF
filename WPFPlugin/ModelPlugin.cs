@@ -103,21 +103,26 @@ namespace WPFPlugin
             try
             {
                 GetValuesFromDialog();
+                var m = new Model();
 
-                var xSize = 6000;
-                var ySize = 9000;
-                var zSize = 10000;
+                var building = new BuildingModel.BuildingModel();
+                building.InsertBody(m);
+
+
+                //var xSize = 6000;
+                //var ySize = 9000;
+                //var zSize = 10000;
 
 
 
-                var column1 = InsertBeam(
-                    new Point(0, 0, 0), 
-                    new Point(0, 0, ySize)
-                    );
-                var column2 = InsertBeam(
-                    column1.StartPoint.Move(new Vector(0,1,0), ySize), 
-                    column1.EndPoint.Move(new Vector(0, 1, 0), ySize)
-                    );
+                //var column1 = InsertBeam(
+                //    new Point(0, 0, 0), 
+                //    new Point(0, 0, ySize)
+                //    );
+                //var column2 = InsertBeam(
+                //    column1.StartPoint.Move(new Vector(0,1,0), ySize), 
+                //    column1.EndPoint.Move(new Vector(0, 1, 0), ySize)
+                //    );
                 //var column3 = InsertBeam(
                 //    column1.StartPoint.Move(new Vector(1, 0, 0), xSize),
                 //    column1.EndPoint.Move(new Vector(1, 0, 0), xSize)
@@ -126,21 +131,21 @@ namespace WPFPlugin
                 //    column2.StartPoint.Move(new Vector(1, 0, 0), xSize),
                 //    column2.EndPoint.Move(new Vector(1, 0, 0), xSize)
                 //);
-                var beam1 = new Beam(column1.EndPoint, column2.EndPoint);
-                beam1.Position.PlaneOffset = _Offset;
-                beam1.Position.Rotation = Position.RotationEnum.BELOW;
-                beam1.Position.Depth = Position.DepthEnum.MIDDLE;
-                beam1.Position.Plane = Position.PlaneEnum.MIDDLE;
-                beam1.Name = _PartName;
-                beam1.Profile.ProfileString = "I20B1_20_93";
-                beam1.Material.MaterialString = _Material;
-                beam1.Insert();
+                //var beam1 = new Beam(column1.EndPoint, column2.EndPoint);
+                //beam1.Position.PlaneOffset = _Offset;
+                //beam1.Position.Rotation = Position.RotationEnum.BELOW;
+                //beam1.Position.Depth = Position.DepthEnum.MIDDLE;
+                //beam1.Position.Plane = Position.PlaneEnum.MIDDLE;
+                //beam1.Name = _PartName;
+                //beam1.Profile.ProfileString = "I20B1_20_93";
+                //beam1.Material.MaterialString = _Material;
+                //beam1.Insert();
 
-                var beam1Height = beam1.GetHeight();
-                beam1.Select();
-                beam1.StartPoint = beam1.StartPoint.Move(new Vector(0, 0, -1), beam1Height / 2);
-                beam1.EndPoint = beam1.EndPoint.Move(new Vector(0, 0, -1), beam1Height / 2);
-                beam1.Modify();
+                //var beam1Height = beam1.GetHeight();
+                //beam1.Select();
+                //beam1.StartPoint = beam1.StartPoint.Move(new Vector(0, 0, -1), beam1Height / 2);
+                //beam1.EndPoint = beam1.EndPoint.Move(new Vector(0, 0, -1), beam1Height / 2);
+                //beam1.Modify();
 
                 //var sortament = new DataSet.Profiles();
                 //sortament.ReadXml("C:\\Temp\\test read.xml");
