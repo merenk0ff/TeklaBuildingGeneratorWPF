@@ -10,6 +10,9 @@ namespace WPFPlugin.BuildingModel
         public double columnH_1 { get; set; }
         public string columnProfileString { get; set; }
         public string beamProfileString { get; set; }
+        public string braceProfileString { get; set; }
+        public string xBraceHorizontalProfileString { get; set; }
+        public string xBraceVerticalProfileString { get; set; }
         public string materialString { get; set; }
 
 
@@ -34,6 +37,9 @@ namespace WPFPlugin.BuildingModel
             columnH_1 = 10000;
             columnProfileString = "I20K1_20_93";
             beamProfileString = "I20B1_20_93";
+            braceProfileString = "PK100X4.0_30245_2003";
+            xBraceHorizontalProfileString = "PK100X4.0_30245_2003";
+            xBraceVerticalProfileString = "PK100X4.0_30245_2003";
             materialString = "C255";
             
         }

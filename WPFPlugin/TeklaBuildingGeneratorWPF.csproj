@@ -112,6 +112,7 @@
       <DependentUpon>Profiles.xsd</DependentUpon>
     </Compile>
     <Compile Include="Extensions\BeamExtension.cs" />
+    <Compile Include="Extensions\LineSegmentExtension.cs" />
     <Compile Include="Extensions\PointExtension.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Helpers\Files.cs" />
